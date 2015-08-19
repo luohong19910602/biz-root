@@ -1,0 +1,36 @@
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.skg.luohong.biz.ou.system.entity.DaysUserTblMapper">
+    
+    <resultMap id="DaysUserTbl" type="com.skg.luohong.biz.ou.system.entity.DaysUserPo">
+		    <result column="nickname_" property="nickname"/>
+		    <result column="state_" property="state"/>
+		    <result column="id_" property="id"/>
+		    <result column="name_" property="name"/>
+		    <result column="create_time_" property="createTime"/>
+		    <result column="create_by_who_is_the_fucker_" property="createByWhoIsTheFucker"/>
+	</resultMap>
+
+	<select id="findAll" resultMap="DaysUserTbl">
+		select * from days_user
+	</select>
+	
+	<insert id="insert" parameterType="com.skg.luohong.biz.ou.system.entity.DaysUserPo">
+	    insert into users (
+		    nickname_, state_, id_, name_, create_time_, create_by_who_is_the_fucker_
+	    ) values (
+	        #{nickname}, #{state}, #{id}, #{name}, #{createTime}, #{createByWhoIsTheFucker}
+	    )
+	</insert>
+	
+	<!-- 更新一条记录 -->  
+    <update id="updateDaysUserTbl" parameterType="com.skg.luohong.biz.ou.system.entity.DaysUserPo">  
+        update days_user set #{nickname}, #{state}, #{name}, #{createTime}, #{createByWhoIsTheFucker} where id_ = #{id} 
+    </update> 
+    
+    <delete id="deleteById" statementType="PREPARED" timeout="20">
+        delete from days_user where id_ =  ${id}
+    </delete>
+</mapper>

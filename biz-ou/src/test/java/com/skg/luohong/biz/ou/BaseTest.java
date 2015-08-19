@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import com.skg.luohong.biz.ou.system.service.ISkgOuResService;
+import com.skg.luohong.biz.ou.system.service.IDaysUserService;
 
 
 /**
@@ -22,13 +22,16 @@ import com.skg.luohong.biz.ou.system.service.ISkgOuResService;
 @ContextConfiguration({"classpath:conf/spring-mybatis.xml", "classpath:conf/spring.xml"})
 @RunWith(SpringJUnit4ClassRunner.class)
 public class BaseTest{
-    
+	
 	@Autowired
-	private ISkgOuResService service;
+	private IDaysUserService resourceService;
+	
 	
 	@Test
 	public void add(){
-		System.out.println(service);
-		System.out.println(service.findAll());
+		System.out.println(resourceService);
+		System.out.println(resourceService.findAll());
 	}
+	
+	
 }

@@ -33,6 +33,19 @@
 	</build>
 
 	<dependencies>
+
+		<dependency>
+			<groupId>com.skg.luohong</groupId>
+			<artifactId>base-core</artifactId>
+			<version>1.0.0-SNAPSHOT</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.skg.luohong</groupId>
+			<artifactId>base-db</artifactId>
+			<version>1.0.0-SNAPSHOT</version>
+		</dependency>
+
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
